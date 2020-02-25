@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Natural Disasters Analysis</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="icon" href="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clouds-icon.png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+		<link rel="stylesheet" href="static/css/style.css">
+	</head>
+
+<body>
+<div class="wrapper">
+	<!-------------- Navigation Bar  ---------------->
+	<nav class="navbar navbar-expand-lg navbar-expand navbar-white flex-column flex-md-row navbar-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarCollapse" aria-controls="navbarCollapse navbarNavDropdown" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		 <a class="navbar-brand nav-link active nav-item" id="btn-nvg" href="index.html" src="https://webstockreview.net/images/clipart-globe-transparent-background-12.png"></a>
+		
+		
+		<div class="collapse justify-content-end navbar-collapse navbar-collapse collapse show">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown" id="navbarCollapse">
+					<a class="nav-link active dropdown-toggle" href="#" id="navbarPlot" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analyses<span class="sr-only">(current)</span></a>
+						
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="plots.html">Graphs</a>
+							
+				<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="comparison.html">D3-Graphs</a>
+				</li>
+					
+				<li class="nav-item">
+					<a class="nav-link active" id="navbarRight" href="comparison.html">Comparison</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!------------------ Carousel  ---------------->
+	<div class="container">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+			<!-- Indicators -->
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+			
+				<div class="item active">
+					<img src="../Images/Tsunamis_amount.png" alt="Tsunami" id="carusel-img2">
+				</div>
+
+				<div class="item">
+					<img src="../Images/Volcano_amount.png" alt="Volcano" id="carusel-img2">
+				</div>
+			
+				<div class="item">
+					<img src="../Images/Global_Temp_Change_1990.png" alt="Global Temp Change" id="carusel-img2">
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="box" id="comparisonbox">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="title">Natural Disasters vs. Global Temperature Changes</h3>
+					<hr>
+					<p class="f">The aim of this project is to analyze if change in land temperature over years has an effect on natural disasters, the amount of events and the magnitude of their effect. <br> On this page, fours graphs represent the relationship between the amount of natural disasters and climate changes.</p>
+					<hr>
+				</div>
+				<hr class="new">
+				<div class="col-lg-12 bk-st">
+					<div class="comp-title">Global Temp Changes 1990-2013</div>
+						<a class="nav-link active" id="comp-bar" href="#">
+						<img class="panel" id="comp-img" src="../Images/Global_Temp_Change_1990.png" alt="Global Temp Changes Graph"></a>
+						<br>
+						<p class="a">While global warming has been trumpeted as an epic climate change crisis with human-produced CO2, a trace atmospheric “greenhouse gas” branded as a primary culprit and endangering “pollutant," remember that throughout earlier periods of Earth’s history CO2 levels have been between four and eighteen times higher than now, with temperature changes preceding, not following atmospheric CO2 changes.</p>
+						<hr>
+				</div>
+				<hr class="new1">
+				<div class="col-lg-12 bk-st">
+					<div class="comp-title">Number of Tsunamis over Years</div>
+						<a class="nav-link active" id="comp-bar" href="#">
+						<img class="panel" id="comp-img" src="../Images/Tsunamis_amount.png" alt="Tsunami Graph"></a>
+						<br>
+						<p class="a">Tsunamis can be generated by any significant displacement of water in oceans or lakes, though are most commonly created by the movement of tectonic plates under the ocean floor, during an earthquake. But they can also be caused by volcanic eruptions, glacial carving, meteorite impacts or landslides.</p>
+						<hr>
+				</div>
+				<hr class="new2">
+			</div>
+			<div class="row">
+				<div class="col-lg-12 bk-st">
+					<div class="comp-title">Number of Volcano Eruptions over Years</div>
+						<a class="nav-link active" id="comp-bar" href="3">
+						<img class="panel" id="comp-img" src="../Images/Volcano_amount.png" alt="Volcano Graph"></a>
+						<br>
+						<p class="a">This graph diosplays the number of fatal incidents recorded in a 23-year period, from 1990 to 2013. The increasing number of fatal incidents occurring can be attributable to improved recording of all volcanic events (both fatal and non-fatal), along with a real increase in the number of fatal incidents.</p>
+						<hr>
+				</div>
+				<hr class="new3">
+				<div class="col-lg-12 bk-st">
+					<div class="comp-title">Number of Earthquakes over Years</div>
+						<a class="nav-link active" id="comp-bar" href="wind_speed.html">
+						<img class="panel" id="comp-img" src="../Images/Earthquakes_Amount.png" alt="Earthquakes Graph"></a>
+						<br>
+						<p class="a">Since the earthquake is a fairly frequent occurrence in nature, a graph was made to only display earthquakes with magnitude of 5.5 or higher, during the years 2000 to 2013 for certain countries. The y axis respresents the number of earthquakes, and the x axis represents the years. It can be seen that this number grows over the years.</p>
+						<hr>
+				</div>
+				<hr class="new4">
+			</div>
+		</div>
+	</div>
+<footer class="footer">
+	<span class="bottom">
+	<p style="font-size: 12px; text-align: center;">© 2020<br> Sura Baghirova & Manuela Hoyos<p>
+	</span>
+</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+<script src="static/js/data.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>

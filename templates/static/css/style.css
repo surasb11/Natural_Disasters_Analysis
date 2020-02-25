@@ -1,0 +1,339 @@
+* {
+	box-sizing: border-box;
+	font-family: Verdana, sans-serif;}
+
+html,
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: DejaVu Sans Mono, monospace;
+	background-color: rgb(200, 200, 200, 0.2);
+}
+
+/* D3
+______________________________________ */
+#temper {
+	border-radius: 8px;
+}
+
+.tooltip {
+	position: absolute;
+	width: 135px;
+	height: 78px;
+	padding: 2px;
+	padding-top: 8px;
+	font: 12px Helvetica;
+	color: black;
+	text-align: center;
+	background: lightslategrey;
+	border: 0;
+	border-radius: 10px;
+}
+
+.axis-text {
+	font-family: Helvetica;
+	font-weight: bold;
+	fill: black;
+	text-anchor: middle;
+}
+
+.active {
+	font-weight: bold;
+	fill: #000;
+	fill: lightslategrey;
+	transition: fill 0.3s ease-out;
+	text-anchor: middle;
+}
+
+.inactive {
+	font-weight: lighter;
+	fill: lightslategrey;
+	transition: fill 0.3s ease-out;
+	text-anchor: middle;
+}
+
+.inactive:hover {
+	fill:purple;
+	cursor: pointer;
+}
+canvas {
+	height: 300px !important;
+}
+
+
+
+/*_________Navigation Bar Button_______________ */
+button {
+	-webkit-writing-mode: horizontal-tb !important;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: center;
+	align-items: flex-start;
+	font: 400 11px system-ui;
+	font-style: normal;
+	font-variant-ligatures: normal;
+	font-variant-caps: normal;
+	font-variant-numeric: normal;
+	font-variant-east-asian: normal;
+	font-weight: 400;
+	font-stretch: normal;}
+
+button, input {
+	overflow: visible;
+	overflow-x: visible;
+	overflow-y: visible;}
+
+/*_________Navigation Bar_______________ */
+
+.navbar {
+	background-color: rgba(0, 81, 155, 0.1);
+	height: 63px;
+	width: 100%;
+	box-shadow: 2px 1px 2px 2px gray;
+	max-height: 70px;}
+
+#btn-nvg {
+	background-image: url("https://cdn.clipart.email/c5d17a3fbd994f3d3766ccffcd18c8ab_earth-clipart-gif_500-500.gif") !important;
+	animation: animStar 50s linear infinite;
+	background: transparent repeat 25% 25%;
+	background-size: 45px;
+	background-repeat: no-repeat;
+	width: 100px;
+	cursor: pointer;
+	overflow: hidden;
+	margin-left: 70px;}
+
+		
+#navbarRight {
+	color: black;
+	padding: 14px 16px;
+	text-decoration: none;
+	float: right;
+	font-size: 16px;
+	font-weight: bold;}
+			
+#navbarRight:hover {
+	background-color: rgb(200, 200, 200);}
+
+#navbarPlot {
+	overflow: hidden;
+	float:right;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;}
+		
+#navbarPlot:hover {
+	background-color: rgb(200, 200, 200);}
+
+
+#navbarCollapse {
+	font-size: 17px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;}
+.dropdown-menu a {
+	float: none;
+	color: black;
+	padding: 10px 14px;
+	text-decoration: none;
+	display: block;
+	text-align: left;}
+.dropdown-menu a:hover {
+	background-color: rgb(200, 200, 200);}
+
+#navbarCollapse:hover .dropdown-menu {
+	display: block;}
+
+
+
+/*______________________Carousel_______________ */
+
+#carusel-img {
+	width: 100%;
+	height: 480px;
+}
+
+.carousel-caption {
+	background-color: rgb(120, 120, 120, 0.5);
+	border-radius: 60px;
+	font-weight: bold;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#carusel-img2 {
+	width: 100%;
+	height: 280px;
+}
+
+
+/*______________________Home Page_______________ */
+
+.title {
+	text-align: center;
+	background-color: rgba(0, 81, 155, 0.1);
+	color: black;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: bolder; 
+	padding-top: 17px;
+	padding-bottom: 15px;
+	font-size: 27px;}
+	
+.temp-change {
+	width: 85%;
+	height: auto;
+	background-color: white;
+	box-shadow: 3px 5px 5px 3px gray;
+	font-family: Gill Sans, sans-serif;
+	margin-top: 50px; 
+	margin-bottom: 50px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 10px 20px 15px;
+	border-radius: 4px;}
+
+#glob-temp {
+	width: 100%;
+	height: 300px;
+	float: left;
+	position: center;}
+	
+.category {
+	width: 80%;
+	padding-left: 160px;
+	font-family: Gill Sans, sans-serif;
+	font-size: 14px;}
+
+
+
+/*______________________Graphs Page_______________ */
+
+#comparisonbox {
+	background-color: white;
+	box-shadow: 3px 5px 5px 3px gray;
+	width: 100%;
+	height: auto;
+	font-family: Gill Sans, sans-serif;
+	margin-top: 50px; 
+	margin-bottom: 50px;
+	padding: 10px 60px 10px 60px;
+	border-radius: 4px;
+}
+
+.a {
+	text-align: center;
+	font-family: Gill Sans, sans-serif;
+	font-size: 16px;}
+
+.f {
+	text-align: center;
+	font-family: Gill Sans, sans-serif;
+	font-size: 18px;
+	font-weight: bolder;}
+
+.comp-title {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 17px;
+	font-weight: bolder;
+}
+
+.bk-st {
+	background-color: rgba(0, 81, 155, 0.1);
+}
+
+#comp-bar {
+	position: center;
+	text-decoration: none;
+	}
+
+#comp-bar:hover {
+	background-color: rgba(0, 81, 155, 0.1);
+	border-radius: 4px;}
+
+#comp-img {	
+	width:100%;
+	height:300px;
+	margin-top: 20px;
+}
+
+/* Red border */
+hr.new1 {
+	width: 1px;
+}
+
+/* Dashed red border */
+hr.new2 {
+	width: 1px;
+}
+
+/* Dotted red border */
+hr.new3 {
+	width: 1px;
+}
+
+/* Thick red border */
+hr.new4 {
+	width: 1px;
+}
+
+
+/* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	padding-bottom: 60px;
+	overflow: auto;}
+	
+
+	
+/* ______________Footer___________________________ */
+	
+/* The footer is positioned at the bottom of the page */
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	min-height: 30px;}
+
+/* The code styles the text at the bottom of the footer */
+.footer > .bottom {
+	text-align: center;
+	position: absolute;
+	height: 56px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 8px;
+	background-color: rgba(0, 81, 155, 0.1);
+	box-shadow: 1px 4px 4px 4px rgba(0, 33, 0, 1);
+}
+
+/*_________Media_______________ */
+
+@media (max-width: 768px) { 
+	.navbar {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.navbar-brand {
+		padding: 8px;
+	}	
+}
