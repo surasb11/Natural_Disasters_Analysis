@@ -1,1 +1,0 @@
-db.mycol.find().pretty()
