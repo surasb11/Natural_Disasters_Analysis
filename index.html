@@ -3,14 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta property="og:title" content="Natural Disasters Analysis">
-		<meta property="og:image" content="./img/tsunami-1080x588.jpg">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>Natural Disasters Analysis</title>
 		
-		<link rel="icon" href="./img/icon-weather.png">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+		<link rel="icon" href="/img/icon-weather.png">
+		
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -21,43 +21,53 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		
-		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="stylesheet" href="/static/style.css">
 	</head>
 
 <body>
 <div class="wrapper">
 	<!-------------- Navigation Bar  ---------------->
-	<nav class="navbar navbar-expand-lg navbar-expand navbar-white flex-column flex-md-row navbar-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarCollapse" aria-controls="navbarCollapse navbarNavDropdown" aria-label="Toggle navigation">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+		<a class="navbar-brand" href="index.html" id="btn-nvg">
+			<img src="/static/img/clipart-globe-transparent-background-12.png" alt="Logo" height="32">
+		</a>
+		
+		<button class="navbar-toggler" type="button"
+			data-toggle="collapse" data-target="#navbarCollapse"
+			aria-controls="navbarCollapse" aria-expanded="false"
+			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		 <a class="navbar-brand nav-link active nav-item" id="btn-nvg" href="index.html" src="https://i.giphy.com/wa8uMtV7bmdGTGGmD7.gif"></a>
-		
-		
-		<div class="collapse justify-content-end navbar-collapse navbar-collapse collapse show">
+		<!--  id moved here (this is what the toggler collapses) -->
+		<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown" id="navbarCollapse">
-					<a class="nav-link active dropdown-toggle" href="#" id="navbarPlot" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analyses<span class="sr-only">(current)</span></a>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link active dropdown-toggle" href="#" id="navbarPlot"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Analyses <span class="sr-only">(current)</span>
+					</a>
 					
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="earthquakes_d3.html">Earthquake with D3</a>
-							
-				<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="plots.html">Individual Graphs</a>
-
+					<!--  properly closed dropdown menu -->
+					<div class="dropdown-menu" aria-labelledby="navbarPlot">
+						<a class="dropdown-item" href="earthquakes_d3.html">Earthquake with D3</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="plots.html">Individual Graphs</a>
+					</div>
 				</li>
-					
+				
 				<li class="nav-item">
 					<a class="nav-link active" id="navbarRight" href="comparison.html">Comparison</a>
 				</li>
+				
 			</ul>
 		</div>
 	</nav>
 	
 	<!------------------ Carousel  ---------------->
 	<div class="container">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2600">
 			<!-- Indicators -->
 
 
@@ -65,15 +75,19 @@
 			<div class="carousel-inner">
 			
 				<div class="item active">
-					<img src="http://www.hayesbrokers.com/wp-content/uploads/2019/08/tsunami-1080x588.jpg" alt="Tsunami" id="carusel-img">
+					<img src="/static/img/tsunami.png" alt="Tsunami" id="carusel-img">
+				</div>
+				
+				<div class="item">
+					<img src="/static/img/weather.gif" alt="Tornado" id="carusel-img">
 				</div>
 
 				<div class="item">
-					<img src="https://natgeo.imgix.net/factsheets/thumbnails/VolcanosHeader.jpg" alt="Volcano" id="carusel-img">
+					<img src="/static/img/volcano.png" alt="Volcano" id="carusel-img">
 				</div>
 			
 				<div class="item">
-					<img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ixVMvazD_DeE/v1/1400x-1.jpg" alt="Earthquick" id="carusel-img">
+					<img src="/static/img/ice.jpg" alt="Earthquick" id="carusel-img">
 				</div>
 				
 				<div class="carousel-caption">
@@ -100,7 +114,7 @@
 			<div class="box temp-change">
 				<h3 class="title">Average Land Temperature Change</h3>
 				<hr>
-					<img src="../Images/Global_Temp_Change_1960_2013.png" id="glob-temp" alt="Global_Temp_Change_1960_2013">&#160;
+					<img src="/files/Global_Temp_Change_1960_2013.png" id="glob-temp" alt="Global_Temp_Change_1960_2013">&#160;
 					<hr>
 					<p class="category a"> Global warming is the long-term rise in the average temperature of the Earth's climate system.
 					</p>
@@ -108,15 +122,15 @@
 			</div>
 		</div>
 	</div>
-<footer class="footer">
+					<footer class="footer">
 	<span class="bottom">
 		<p style="font-size: 12px; text-align: center;">© 2020<br> Sura Baghirova & Manuela Hoyos<p>
 	</span>
 </footer>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-<script src="static/js/data.js"></script>
-<script src="static/js/app.js"></script>
+<script src="static/data.js"></script>
+<script src="static/app.js"></script>
 
 
 </body>

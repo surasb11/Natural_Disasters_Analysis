@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta property="og:title" content="Natural Disasters Analysis">
-		<meta property="og:image" content="./img/tsunami-1080x588.jpg">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>Natural Disasters Analysis</title>
 		
-		<link rel="icon" href="./img/icon-weather.png">
+		<link rel="icon" href="/static/img/icon-weather.png">
+		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,37 +21,46 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		
-		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="stylesheet" href="/static/style.css">
 	</head>
 
 <body>
 <div class="wrapper">
 	<!-------------- Navigation Bar  ---------------->
-	<nav class="navbar navbar-expand-lg navbar-expand navbar-white flex-column flex-md-row navbar-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarCollapse" aria-controls="navbarCollapse navbarNavDropdown" aria-label="Toggle navigation">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+		<a class="navbar-brand" href="index.html" id="btn-nvg">
+			<img src="/static/img/clipart-globe-transparent-background-12.png" alt="Logo" height="32">
+		</a>
+		
+		<button class="navbar-toggler" type="button"
+			data-toggle="collapse" data-target="#navbarCollapse"
+			aria-controls="navbarCollapse" aria-expanded="false"
+			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		
-		 <a class="navbar-brand nav-link active nav-item" id="btn-nvg" href="index.html" src="https://webstockreview.net/images/clipart-globe-transparent-background-12.png"></a>
-		
-		
-		<div class="collapse justify-content-end navbar-collapse navbar-collapse collapse show">
+		<!-- ✅ id moved here (this is what the toggler collapses) -->
+		<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown" id="navbarCollapse">
-					<a class="nav-link active dropdown-toggle" href="#" id="navbarPlot" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Analyses<span class="sr-only">(current)</span></a>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link active dropdown-toggle" href="#" id="navbarPlot"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Analyses <span class="sr-only">(current)</span>
+					</a>
 					
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<!-- ✅ properly closed dropdown menu -->
+					<div class="dropdown-menu" aria-labelledby="navbarPlot">
 						<a class="dropdown-item" href="earthquakes_d3.html">Earthquake with D3</a>
-								
-					<div class="dropdown-divider"></div>
-						<a class="dropdown-item"
-						href="plots.html">Individual Graphs</a>
-						
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="plots.html">Individual Graphs</a>
+					</div>
 				</li>
-					
+				
 				<li class="nav-item">
 					<a class="nav-link active" id="navbarRight" href="comparison.html">Comparison</a>
 				</li>
+				
 			</ul>
 		</div>
 	</nav>
@@ -64,15 +73,15 @@
 			<div class="carousel-inner">
 			
 				<div class="item active">
-					<img src="../Images/Tsunamis_over_Years.png" alt="Tsunami" id="carusel-img2">
+					<img src="/files/Tsunamis_over_Years.png" alt="Tsunami" id="carusel-img2">
 				</div>
 
 				<div class="item">
-					<img src="../Images/Volcanoes_over_Years.png" alt="Volcano" id="carusel-img2">
+					<img src="/files/Volcanoes_over_Years.png" alt="Volcano" id="carusel-img2">
 				</div>
 			
 				<div class="item">
-					<img src="../Images/Earthquakes_over_Years.png" alt="Global Temp Change" id="carusel-img2">
+					<img src="/files/Earthquakes_over_Years.png" alt="Global Temp Change" id="carusel-img2">
 				</div>
 			</div>
 
@@ -102,7 +111,7 @@
 				<div class="col-lg-12 bk-st">
 					<div class="comp-title">Global Temp Changes 1990-2013</div>
 						<a class="nav-link active" id="comp-bar" href="#">
-						<img class="panel" id="comp-img" src="../Images/Global_Temp_Change_1990_2013.png" alt="Global Temp Changes Graph"></a>
+						<img class="panel" id="comp-img" src="/files/Global_Temp_Change_1990_2013.png" alt="Global Temp Changes Graph"></a>
 						<br>
 						<p class="a">While global warming has been trumpeted as an epic climate change crisis with human-produced CO2, a trace atmospheric “greenhouse gas” branded as a primary culprit and endangering “pollutant," remember that throughout earlier periods of Earth’s history CO2 levels have been between four and eighteen times higher than now, with temperature changes preceding, not following atmospheric CO2 changes.</p>
 						<hr>
@@ -111,7 +120,7 @@
 				<div class="col-lg-12 bk-st">
 					<div class="comp-title">Number of Tsunamis over Years</div>
 						<a class="nav-link active" id="comp-bar" href="#">
-						<img class="panel" id="comp-img" src="../Images/Tsunamis_over_Years.png" alt="Tsunami Graph"></a>
+						<img class="panel" id="comp-img" src="/files/Tsunamis_over_Years.png" alt="Tsunami Graph"></a>
 						<br>
 						<p class="a">Tsunamis can be generated by any significant displacement of water in oceans or lakes, though are most commonly created by the movement of tectonic plates under the ocean floor, during an earthquake. But they can also be caused by volcanic eruptions, glacial carving, meteorite impacts or landslides.</p>
 						<hr>
@@ -122,7 +131,7 @@
 				<div class="col-lg-12 bk-st">
 					<div class="comp-title">Number of Volcano Eruptions over Years</div>
 						<a class="nav-link active" id="comp-bar" href="3">
-						<img class="panel" id="comp-img" src="../Images/Volcanoes_over_Years.png" alt="Volcano Graph"></a>
+						<img class="panel" id="comp-img" src="/files/Volcanoes_over_Years.png" alt="Volcano Graph"></a>
 						<br>
 						<p class="a">This graph diosplays the number of fatal incidents recorded in a 23-year period, from 1990 to 2013. The increasing number of fatal incidents occurring can be attributable to improved recording of all volcanic events (both fatal and non-fatal), along with a real increase in the number of fatal incidents.</p>
 						<hr>
@@ -131,7 +140,7 @@
 				<div class="col-lg-12 bk-st">
 					<div class="comp-title">Number of Earthquakes over Years</div>
 						<a class="nav-link active" id="comp-bar" href="wind_speed.html">
-						<img class="panel" id="comp-img" src="../Images/Earthquakes_over_Years.png" alt="Earthquakes Graph"></a>
+						<img class="panel" id="comp-img" src="/files/Earthquakes_over_Years.png" alt="Earthquakes Graph"></a>
 						<br>
 						<p class="a">Since the earthquake is a fairly frequent occurrence in nature, a graph was made to only display earthquakes with magnitude of 5.5 or higher, during the years 2000 to 2013 for certain countries. The y axis respresents the number of earthquakes, and the x axis represents the years. It can be seen that this number grows over the years.</p>
 						<hr>
@@ -142,13 +151,13 @@
 	</div>
 <footer class="footer">
 	<span class="bottom">
-	<p style="font-size: 12px; text-align: center;">© 2020<br> Sura Baghirova & Manuela Hoyos<p>
+	<p style="font-size: 12px; text-align: center;">© 2020<br> Sura Baghirova & Manuela Hoyos</p>
 	</span>
 </footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-<script src="static/js/data.js"></script>
-<script src="static/js/app.js"></script>
+<script src="/static/data.js"></script>
+<script src="/static/app.js"></script>
 </body>
 </html>

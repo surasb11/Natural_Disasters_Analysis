@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta property="og:title" content="Natural Disasters Analysis">
+		<link rel="icon" href="/static/img/icon-weather.png">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Earthquakes with D3</title>
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+		<link rel="stylesheet" href="/static/style.css">
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<!-------------- Navigation Bar  ---------------->
+			<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<a class="navbar-brand" href="index.html" id="btn-nvg">
+					<img src="/static/img/clipart-globe-transparent-background-12.png" alt="Logo" height="32">
+				</a>
+				
+				<button class="navbar-toggler" type="button"
+					data-toggle="collapse" data-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<!-- ✅ id moved here (this is what the toggler collapses) -->
+				<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+					<ul class="navbar-nav ml-auto">
+						
+						<li class="nav-item dropdown">
+							<a class="nav-link active dropdown-toggle" href="#" id="navbarPlot"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Analyses <span class="sr-only">(current)</span>
+							</a>
+							
+							<!-- ✅ properly closed dropdown menu -->
+							<div class="dropdown-menu" aria-labelledby="navbarPlot">
+								<a class="dropdown-item" href="earthquakes_d3.html">Earthquake with D3</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="plots.html">Individual Graphs</a>
+							</div>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link active" id="navbarRight" href="comparison.html">Comparison</a>
+						</li>
+						
+					</ul>
+				</div>
+			</nav>
+			
+		
+			<div class="cover">
+				<div class="cover-content" style="position: relative;"></div>
+			
+				<div class="crossfade" style="position: relative;">
+					<!-- I get injected by crossfade.js -->
+					<canvas></canvas>
+				</div>
+			</div>
+		
+			<div class="container">
+				<div class="box" id="earthquakes-box">
+					<div class="row">
+						<div class="col-md-12 ">
+							<h3 class="title">Average Land Temperature and Magnitude of Earthquakes </h3>
+							<hr>
+						</div>
+					</div>
+					
+					<div class="svg-div">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="comp-title">Turkey</div>
+									<div id = "chart1"></div>	
+							</div>
+								
+							<div class="col-lg-6">
+								<div class="comp-title">Iran</div>
+									<div id = "chart2"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="comp-title">Greece</div>
+									<div id = "chart3"></div>
+							</div>
+							
+							<div class="col-lg-6">
+								<div class="comp-title">Pakistan</div>
+									<div id = "chart4"></div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+			<footer class="footer">
+			<span class="bottom">
+				<p style="font-size: 12px; text-align: center;">© 2020<br> Sura Baghirova & Manuela Hoyos</p>
+			</span>
+			</footer>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+		
+		<script src="crossfade.jquery.js"></script>
+		
+		<script src="/static/data.js"></script>
+		<script type="text/javascript" src="/static/temp.js"></script>
+		<script src="/static/app.js"></script>
+		
+		<script>
+			$(function () {
+				$('.crossfade').crossfade({
+					start: '/static/img/imgcrossfade1.jpg',
+					end: '/static/img/imgcrossfade2.jpg',
+					backgroundPosition: 'center center'
+				});
+			});
+		</script>
+	</body>
+</html>

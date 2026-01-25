@@ -133,7 +133,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     return circlesGroup;
 }
 //retrieve data
-d3.csv('../csv-files/output_data/Earth_Turkey1.csv').then(function(tempData) {
+d3.csv('csv-files/output_data/Earth_Turkey1.csv').then(function(tempData) {
 
     console.log(tempData);
     
@@ -411,7 +411,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     return circlesGroup;
 }
 //retrieve data
-d3.csv('../csv-files/output_data/Earth_Iran2.csv').then(function(tempData) {
+d3.csv('csv-files/output_data/Earth_Iran2.csv').then(function(tempData) {
 
     console.log(tempData);
     
@@ -688,7 +688,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     return circlesGroup;
 }
 //retrieve data
-d3.csv('../csv-files/output_data/Earth_Greece3.csv').then(function(tempData) {
+d3.csv('csv-files/output_data/Earth_Greece3.csv').then(function(tempData) {
 
     console.log(tempData);
     
@@ -966,7 +966,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     return circlesGroup;
 }
 //retrieve data
-d3.csv('../csv-files/output_data/Earth_Pakistan4.csv').then(function(tempData) {
+d3.csv('csv-files/output_data/Earth_Pakistan4.csv').then(function(tempData) {
 
     console.log(tempData);
     

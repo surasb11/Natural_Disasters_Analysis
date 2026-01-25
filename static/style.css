@@ -11,55 +11,84 @@ body {
 	background-color: rgb(200, 200, 200, 0.2);
 }
 
-/* D3
+/* D3 <!-- ADD THIS-->
 ______________________________________ */
-#temper {
-	border-radius: 8px;
-}
-
-.tooltip {
-	position: absolute;
-	width: 135px;
-	height: 78px;
-	padding: 2px;
-	padding-top: 8px;
-	font: 12px Helvetica;
-	color: black;
-	text-align: center;
-	background: lightslategrey;
-	border: 0;
-	border-radius: 10px;
-}
-
-.axis-text {
-	font-family: Helvetica;
-	font-weight: bold;
-	fill: black;
+.aText {
+	font-family: sans-serif;
+	font-size: 16px;
 	text-anchor: middle;
-}
+  }
 
-.active {
+  .active {
 	font-weight: bold;
 	fill: #000;
-	fill: lightslategrey;
 	transition: fill 0.3s ease-out;
 	text-anchor: middle;
-}
+  }
 
-.inactive {
+  .inactive {
 	font-weight: lighter;
-	fill: lightslategrey;
+	fill: #c9c9c9;
 	transition: fill 0.3s ease-out;
 	text-anchor: middle;
-}
+  }
 
-.inactive:hover {
-	fill:purple;
+  .inactive:hover {
+	fill: #000;
 	cursor: pointer;
-}
+  }
+
+  /* font size dependent on radius, see app.js */
+  .stateText {
+	font-family: sans-serif;
+	fill: rgb(16, 30, 235);
+	text-anchor: middle;
+  }
+
+  .stateCircle {
+	fill: #89bdd3;
+	stroke: #2511e2;
+  }
+
+  .chart {
+	display: block;
+	margin: 0;
+  }
+
+  .d3-tip {
+	padding: 6px;
+	font-size: 12px;
+	line-height: 1;
+	line-height: 1.5em;
+	color: #fff;
+	text-align: center;
+	text-transform: capitalize;
+	background: rgba(16, 30, 235, 0.8);
+	border-radius: 4px;
+  }
+
+  /* Mobile Rules */
+  @media screen and (max-width: 530px) {
+	.stateText {
+	  display: none;
+	}
+		
+	.aText {
+	  font-size: 14px;
+	}
+  }
+
+  @media screen and (max-width: 400px) {
+	.aText {
+	  font-size: 13px;
+	}
+  }
+
 canvas {
 	height: 300px !important;
 }
+/* D3
+______________________________________ */
 
 
 
