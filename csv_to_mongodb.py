@@ -1,6 +1,5 @@
 import pandas as pd
 import pymongo
-import json
 import os
 
 # Global database connection to be reused
@@ -31,16 +30,92 @@ def _import_to_collection(filepath, collection_name):
     db_cm.insert_many(data_json)
 
 def import_csvfile(filepath):
-    _import_to_collection(filepath, 'temp_change_1960')
+	
+	mng_client = pymongo.MongoClient('localhost', 27017)
+	mng_db = mng_client['Natural_Disasters'] # Replace mongo db name
+	
+	# Replace mongo db collection name
+	collection_name = 'temp_change_1960'
+	
+	db_cm = mng_db['temp_change_1960']
+	
+	cdir = os.path.dirname(__file__)
+	file_res = os.path.join(cdir, filepath)
+	data = pd.read_csv(file_res)
+	data_json = data.to_dict(orient='records')
+	
+	db_cm.remove()
+	db_cm.insert(data_json)
 
 def imp_csvfile(filepath1):
-    _import_to_collection(filepath1, 'temp_change_1990')
+	mng_client1 = pymongo.MongoClient('localhost', 27017)
+	mng_db1 = mng_client1['Natural_Disasters']
+	collection_name1 = 'temp_change_1990'
+	db_cm1 = mng_db1['temp_change_1990']
+	
+	cdir1 = os.path.dirname(__file__)
+	file_res1 = os.path.join(cdir1, filepath1)
+	data1 = pd.read_csv(file_res1)
+	data_json1 = data1.to_dict(orient='records')
+	
+	db_cm1.remove()
+	db_cm1.insert(data_json1)
 
 def imp_csvfil(filepath2):
-    _import_to_collection(filepath2, 'earthquakes')
+	mng_client2 = pymongo.MongoClient('localhost', 27017)
+	mng_db2 = mng_client2['Natural_Disasters']
+	collection_name2 = 'earthquakes'
+	db_cm2 = mng_db2['earthquakes']
+	
+	cdir2 = os.path.dirname(__file__)
+	file_res2 = os.path.join(cdir2, filepath2)
+	data2 = pd.read_csv(file_res2)
+	data_json2 = data2.to_dict(orient='records')
+	
+	db_cm2.remove()
+	db_cm2.insert(data_json2)
 
 def imp_file(filepath3):
-    _import_to_collection(filepath3, 'tsunamis')
+	mng_client3 = pymongo.MongoClient('localhost', 27017)
+	mng_db3 = mng_client3['Natural_Disasters']
+	collection_name3 = 'tsunamis'
+	db_cm3 = mng_db3['tsunamis']
+	
+	cdir3 = os.path.dirname(__file__)
+	file_res3 = os.path.join(cdir3, filepath3)
+	data3 = pd.read_csv(file_res3)
+	data_json3 = data3.to_dict(orient='records')
+	
+	db_cm3.remove()
+	db_cm3.insert(data_json3)
+	
+def imp_files(filepath4):
+	mng_client4 = pymongo.MongoClient('localhost', 27017)
+	mng_db4 = mng_client4['Natural_Disasters']
+	collection_name4 = 'volcanoes'
+	db_cm4 = mng_db4['volcanoes']
+	
+	cdir4 = os.path.dirname(__file__)
+	file_res4 = os.path.join(cdir4, filepath4)
+	data4 = pd.read_csv(file_res4)
+	data_json4 = data4.to_dict(orient='records')
+	
+	db_cm4.remove()
+	db_cm4.insert(data_json4)
+	
+def impr_files(filepath5):
+	mng_client5 = pymongo.MongoClient('localhost', 27017)
+	mng_db5 = mng_client5['Natural_Disasters']
+	collection_name5 = 'temp_change_2000'
+	db_cm5 = mng_db5['temp_change_2000']
+	
+	cdir5 = os.path.dirname(__file__)
+	file_res5 = os.path.join(cdir5, filepath5)
+	data5 = pd.read_csv(file_res5)
+	data_json5 = data5.to_dict(orient='records')
+	
+	db_cm5.remove()
+	db_cm5.insert(data_json5)
 
 def imp_files(filepath4):
     _import_to_collection(filepath4, 'volcanoes')
