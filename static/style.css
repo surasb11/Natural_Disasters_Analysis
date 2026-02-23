@@ -229,6 +229,7 @@ button, input {
 	width: 85%;
 	height: auto;
 	background-color: white;
+	color: black;
 	box-shadow: 3px 5px 5px 3px gray;
 	font-family: Gill Sans, sans-serif;
 	margin-top: 50px; 
@@ -256,6 +257,7 @@ button, input {
 
 #earthquakes-box {
 	background-color: white;
+	color: black;
 	box-shadow: 3px 5px 5px 3px gray;
 	width: 100%;
 	height: auto;
